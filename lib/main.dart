@@ -1,57 +1,45 @@
 import 'package:flutter/material.dart';
+import 'components/counter_box.dart';
+import 'components/footer.dart';
+import 'components/header.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(myApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  int counter = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    print("App dimulai");
-  }
-
+class myApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(title: Text('Latihan App')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Halo, Raynald!', style: TextStyle(fontSize: 24)),
-              SizedBox(height: 20),
-              Text(
-                'Counter: $counter',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              counter++;
-            });
-          },
-          child: Icon(Icons.add),
+      title: 'Komponen Terpisah',
+      theme: ThemeData(
+        // primarySwatch: Colors.teal,
+        scaffoldBackgroundColor: Color.fromARGB(255, 76, 165, 255),
+        textTheme: TextTheme(bodyMedium: TextStyle(fontFamily: 'Poppins')),
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Satu Halaman, Banyak Komponen')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            HeaderWidget(),
+            SizedBox(height: 20),
+            CounterBox(),
+            SizedBox(height: 20),
+            FooterWidget(),
+          ],
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    print("App ditutup");
-    super.dispose();
   }
 }
