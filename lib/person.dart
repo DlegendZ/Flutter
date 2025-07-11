@@ -1,13 +1,13 @@
-// Contoh Encapsulation
+//encapsulation
 
-class Person {
+class person {
   String? _name;
   int? _age;
 
-  Person(this._name, this._age);
+  person(this._name, this._age);
 
   void introduce() {
-    print("Hello, my name is ${_name}. My age is ${_age}");
+    print("Hello, my name is $_name and this year I am $_age year old.");
   }
 
   String? getName() {
@@ -19,6 +19,6 @@ class Person {
   }
 
   int birthday() {
-    return _age! + 1;
+    return _age!+1;
   }
 }

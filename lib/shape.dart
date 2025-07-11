@@ -1,13 +1,11 @@
-// Contoh Abstraction
-
 abstract class Shape {
-  double getArea(); // abstract method => method yang tidak ada bodynya
+  double getArea();
 }
 
-class Square extends Shape {
+class square extends Shape {
   double length;
 
-  Square(this.length);
+  square(this.length);
 
   @override
   double getArea() {
@@ -15,10 +13,10 @@ class Square extends Shape {
   }
 }
 
-class Circle extends Shape {
+class circle extends Shape {
   double radius;
 
-  Circle(this.radius);
+  circle(this.radius);
 
   @override
   double getArea() {
