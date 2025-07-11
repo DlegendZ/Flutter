@@ -1,42 +1,29 @@
-// OOP => class + object
-
-// class mirip blueprint
-// attribute => karakteristik dari sebuah class
-// method => apa yang bisa dibuat oleh sebuah class
-
-import 'Person.dart';
-import 'Shape.dart';
+import 'person.dart';
+import 'shape.dart';
 
 void main() {
-  // Object => yang dapat kita liat dan amati
-  // List<Person> persons = [];
-  Person rich = Person("Rich", 20);
-  // rich.introduce();
+  person rich = person("Rich", 28);
+
+  rich.introduce();
+
+  // print(rich.getName());
+
+  rich.setName("Raynald");
+
+  // print(rich.getName());
+
   // print(rich.birthday());
 
-  // Contoh Encapsulation
-  // rich.setName("Ivan"); // Setter => untuk set value
-  // print(rich.getName()); // Getter => untuk mengetahui value
+  square shape_a = square(2.0);
 
-  // Contoh Abstraction
-  Square square = Square(10.0);
-  print(square.getArea());
+  circle shape_b = circle(4.0);
 
-  Circle circle = Circle(10.0);
-  print(circle.getArea());
+  // print(shape_a.getArea());
 
-  // Contoh polymorphism
-  List<Shape> shapes = [square, circle];
+  // print(shape_b.getArea());
+
+  List<Shape> shapes = [shape_a, shape_b];
+
+  print(shapes);
+
 }
-
-// Pillars of OOP => membuat programmer lebih gampang untuk mengimplementasikan OOP
-// 1. Encapsulation => mencegah modifikasi data dari luar class
-// Cara dicapai: tambahin _ ke depan dari data, dan pakai getter dan setter
-
-// 2. Abstraction => menyembunyikan detail implementasi, jadi hanya menampilkan detail yang penting saja.
-// Cara dicapai: keyword abstract
-
-// 3. Inheritance => parent class mewariskan attribute dan method ke child class => kita ga perlu tulis ulang-ulang code
-// Cara dicapai: keyword extends
-
-// 4. Polymorphism => banyak bentuk, lebih fleksibel, jadinya tuh kita tidak perlu tulis ulang ulang code
