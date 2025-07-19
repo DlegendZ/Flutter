@@ -4,10 +4,7 @@ import 'CartModel.dart'; // import modelnya
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => CartModel(),
-      child: MyApp(),
-    ),
+    ChangeNotifierProvider(create: (context) => CartModel(), child: MyApp()),
   );
 }
 
@@ -39,7 +36,7 @@ class ToyCatalogPage extends StatelessWidget {
                 MaterialPageRoute(builder: (_) => CartPage()),
               );
             },
-          )
+          ),
         ],
       ),
       body: ListView.builder(
@@ -69,9 +66,8 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(title: Text('Keranjang')),
       body: ListView.builder(
         itemCount: cart.items.length,
-        itemBuilder: (context, index) => ListTile(
-          title: Text(cart.items[index]),
-        ),
+        itemBuilder:
+            (context, index) => ListTile(title: Text(cart.items[index])),
       ),
     );
   }
