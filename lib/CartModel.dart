@@ -7,6 +7,6 @@ class CartModel extends ChangeNotifier {
 
   void add(String item) {
     _items.add(item);
-    notifyListeners(); // kasih tahu semua anak-anak yang dengerin
+    notifyListeners();
   }
 }

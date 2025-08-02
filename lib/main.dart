@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'CartModel.dart';
 import 'package:provider/provider.dart';
-import 'CartModel.dart'; // import modelnya
 
 void main() {
   runApp(
@@ -11,22 +11,18 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Toko Mainan',
-      home: ToyCatalogPage(),
-    );
+    return MaterialApp(title: 'Toko Mainan', home: ToyCatalogPage());
   }
 }
 
 class ToyCatalogPage extends StatelessWidget {
-  final List<String> toyList = ['Robot', 'Boneka', 'Puzzle', 'Lego'];
+  final List<String> toyList = ['Robot', 'Doll', 'Puzzle', 'Lego'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Mainan'),
+        title: Text('Toy List'),
         actions: [
           IconButton(
             icon: Icon(Icons.shopping_cart),
@@ -66,8 +62,9 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(title: Text('Keranjang')),
       body: ListView.builder(
         itemCount: cart.items.length,
-        itemBuilder:
-            (context, index) => ListTile(title: Text(cart.items[index])),
+        itemBuilder: (context, index) {
+          return ListTile(title: Text(cart.items[index]));
+        },
       ),
     );
   }
